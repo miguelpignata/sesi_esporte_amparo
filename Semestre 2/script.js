@@ -15,19 +15,26 @@ function mudarSecao(idSecao) {
             botao.classList.add('active');
         }
     });
+
+    // Resetar para tela de seleção ao entrar em Modalidades ou Notícias
+    if (idSecao === 'modalidades') {
+        voltarParaListaModalidades();
+    } else if (idSecao === 'noticias') {
+        voltarParaListaNoticias();
+    }
 }
 
 // --- NOTÍCIAS ---
 function filtrarNoticia(categoria) {
     const botoesFiltro = document.querySelectorAll('.filtro-btn');
     botoesFiltro.forEach(btn => btn.classList.remove('active'));
-    if (event && event.target) {
-        event.target.classList.add('active');
+    if (window.event && window.event.target) {
+        window.event.target.classList.add('active');
     }
 }
 
 function abrirNoticia(idNoticia) {
-    const subSecoes = document.querySelectorAll('.sub-secao');
+    const subSecoes = document.querySelectorAll('#noticias .sub-secao');
     subSecoes.forEach(sub => sub.classList.remove('ativa-sub'));
 
     const noticiaAlvo = document.getElementById(idNoticia);
@@ -37,13 +44,35 @@ function abrirNoticia(idNoticia) {
 }
 
 function voltarParaListaNoticias() {
-    const subSecoes = document.querySelectorAll('.sub-secao');
+    const subSecoes = document.querySelectorAll('#noticias .sub-secao');
     subSecoes.forEach(sub => sub.classList.remove('ativa-sub'));
 
     document.getElementById('sub-noticias-lista').classList.add('ativa-sub');
 }
 
-// --- MODALIDADES ---
+// --- MODALIDADES (Navegação em Sub-Telas) ---
+function abrirElencoModalidade(chave) {
+    const subSecoes = document.querySelectorAll('#modalidades .sub-secao');
+    subSecoes.forEach(sub => sub.classList.remove('ativa-sub'));
+
+    const detalheSub = document.getElementById('sub-modalidade-detalhe');
+    if (detalheSub) {
+        detalheSub.classList.add('ativa-sub');
+    }
+
+    trocarModalidade(chave);
+}
+
+function voltarParaListaModalidades() {
+    const subSecoes = document.querySelectorAll('#modalidades .sub-secao');
+    subSecoes.forEach(sub => sub.classList.remove('ativa-sub'));
+
+    const listaSub = document.getElementById('sub-modalidades-lista');
+    if (listaSub) {
+        listaSub.classList.add('ativa-sub');
+    }
+}
+
 const dadosModalidades = {
     volei: {
         titulo: "VÔLEI<br><span>(MISTO)</span>",
@@ -91,9 +120,14 @@ const dadosModalidades = {
 function trocarModalidade(chave) {
     const botoesMod = document.querySelectorAll('.mod-btn');
     botoesMod.forEach(btn => btn.classList.remove('active'));
-    if (event && event.target) {
-        event.target.classList.add('active');
-    }
+
+    // Marcar botão ativo do menu interno
+    botoesMod.forEach(btn => {
+        const onClickAttr = btn.getAttribute('onclick');
+        if (onClickAttr && onClickAttr.includes(`'${chave}'`)) {
+            btn.classList.add('active');
+        }
+    });
 
     const dados = dadosModalidades[chave];
     if (!dados) return;
@@ -146,17 +180,23 @@ const dadosUniformes = {
 function trocarUniforme(tipo) {
     const botoesUni = document.querySelectorAll('.uni-btn');
     botoesUni.forEach(btn => btn.classList.remove('active'));
-    if (event && event.target) {
-        event.target.classList.add('active');
+    
+    if (window.event && window.event.target) {
+        window.event.target.classList.add('active');
     }
 
     const kit = dadosUniformes[tipo];
     if (!kit) return;
 
-    document.getElementById('uni-frente').src = kit.frente;
-    document.getElementById('uni-lado1').src = kit.lado1;
-    document.getElementById('uni-costas').src = kit.costas;
-    document.getElementById('uni-lado2').src = kit.lado2;
+    const elFrente = document.getElementById('uni-frente');
+    const elLado1 = document.getElementById('uni-lado1');
+    const elCostas = document.getElementById('uni-costas');
+    const elLado2 = document.getElementById('uni-lado2');
+
+    if (elFrente) elFrente.src = kit.frente;
+    if (elLado1) elLado1.src = kit.lado1;
+    if (elCostas) elCostas.src = kit.costas;
+    if (elLado2) elLado2.src = kit.lado2;
 }
 
 // --- CALENDÁRIO ---
@@ -181,16 +221,19 @@ function renderizarCalendario() {
     const ano = dataAtualCalendario.getFullYear();
     const mes = dataAtualCalendario.getMonth();
 
-    document.getElementById('cal-month-name').textContent = nomesMeses[mes];
-    document.getElementById('cal-year-number').textContent = ano;
+    const elMonth = document.getElementById('cal-month-name');
+    const elYear = document.getElementById('cal-year-number');
+    if (elMonth) elMonth.textContent = nomesMeses[mes];
+    if (elYear) elYear.textContent = ano;
 
     const calGrid = document.getElementById('cal-days-grid');
+    if (!calGrid) return;
     calGrid.innerHTML = '';
 
-    const primeiroDiaMês = new Date(ano, mes, 1);
-    const totalDiasMês = new Date(ano, mes + 1, 0).getDate();
+    const primeiroDiaMes = new Date(ano, mes, 1);
+    const totalDiasMes = new Date(ano, mes + 1, 0).getDate();
 
-    let diaSemanaInicial = primeiroDiaMês.getDay() - 1;
+    let diaSemanaInicial = primeiroDiaMes.getDay() - 1;
     if (diaSemanaInicial === -1) diaSemanaInicial = 6;
 
     for (let i = 0; i < diaSemanaInicial; i++) {
@@ -202,7 +245,7 @@ function renderizarCalendario() {
     const hoje = new Date();
     const eventosDoMes = [];
 
-    for (let dia = 1; dia <= totalDiasMês; dia++) {
+    for (let dia = 1; dia <= totalDiasMes; dia++) {
         const spanDia = document.createElement('span');
         spanDia.textContent = dia;
 
@@ -226,6 +269,7 @@ function renderizarCalendario() {
     }
 
     const eventosContainer = document.getElementById('eventos-lista-container');
+    if (!eventosContainer) return;
     eventosContainer.innerHTML = '';
 
     if (eventosDoMes.length > 0) {
@@ -252,7 +296,7 @@ function mudarMes(delta) {
     renderizarCalendario();
 }
 
-// --- BANCO DE DADOS DE TREINOS E SOLICITAÇÃO ---
+// --- SOLICITAÇÃO DE TREINO E TABELA ---
 function renderizarTabelaTreinos() {
     const container = document.getElementById('tabela-solicitacoes-container');
     if (!container) return;
@@ -316,9 +360,8 @@ function enviarSolicitacaoTreino(event) {
     alert(`Solicitação de treino em ${modalidade} realizada com sucesso para ${nome}!`);
 }
 
-// Inicialização
+// Inicialização segura
 window.onload = function() {
     renderizarCalendario();
     renderizarTabelaTreinos();
-    trocarModalidade('volei');
 };

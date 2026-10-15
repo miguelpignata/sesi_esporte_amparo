@@ -1,4 +1,4 @@
-// Banco de dados simulado para armazenar as solicitações de treino
+// Banco de dados simulado das solicitações de treino
 const bancoDadosTreinos = [
     {
         id: 1,

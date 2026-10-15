@@ -15,7 +15,7 @@
         <header class="site-header">
             <a href="#inicio" class="logo-container" onclick="mudarSecao('inicio')">
                 <div class="logo-icon-img">
-                    <img src="./Imagens/sesiesporteamparo.png" alt="Logo SESI Esporte Amparo">
+                    <img src="Imagens/sesiesporteamparo.jpg" alt="Logo SESI Esporte Amparo">
                 </div>
                 <div class="logo-text">
                     SESI <span class="highlight">ESPORTE</span> AMPARO
@@ -219,36 +219,93 @@
                 </div>
             </section>
 
-            <!-- Seção 3: Modalidades -->
+            <!-- Seção 3: Modalidades (Com Seleção de Modalidade tipo Tela de Notícias) -->
             <section id="modalidades" class="secao white-bg">
-                <div class="modalidades-container">
-                    <div class="modalidades-header">
-                        <div class="modalidades-title-area">
-                            <span class="sub-title-red">Nossas Equipes</span>
-                            <h2>MODALIDADES</h2>
-                        </div>
+                <!-- Sub-seção 1: Lista de Escolha de Modalidades -->
+                <div id="sub-modalidades-lista" class="sub-secao ativa-sub modalidades-centralizadas">
+                    <div class="modalidades-header-top">
+                        <span class="sub-title-red">Nossas Equipes</span>
+                        <h2>SELEÇÃO DE MODALIDADES</h2>
+                        <p class="sub-desc-text">Selecione uma modalidade abaixo para visualizar o elenco de atletas e detalhes da equipe.</p>
                     </div>
 
-                    <div class="filtros-modalidades">
-                        <button class="mod-btn active" onclick="trocarModalidade('volei')">Vôlei Misto</button>
-                        <button class="mod-btn" onclick="trocarModalidade('futsal')">Futsal Masculino</button>
-                        <button class="mod-btn" onclick="trocarModalidade('handebol')">Handebol Feminino</button>
-                        <button class="mod-btn" onclick="trocarModalidade('tenis')">Tênis de Mesa em Dupla</button>
-                    </div>
-
-                    <div id="modalidade-conteudo" class="modalidade-content">
-                        <div class="elenco-banner">
-                            <img id="elenco-img" src="Imagens/volei.jpeg" alt="Quadra Vôlei SESI">
-                            <div class="elenco-overlay-info">
-                                <div id="elenco-badge" class="elenco-badge">VÔLEI<br><span>(MISTO)</span></div>
-                                <div id="elenco-desc" class="elenco-desc-box">
-                                    Conheça a equipe de vôlei mista responsável por competir no InterSesi
-                                </div>
+                    <div class="modalidades-grid-cards">
+                        <div class="mod-select-card" onclick="abrirElencoModalidade('volei')">
+                            <div class="mod-card-img">
+                                <img src="Imagens/volei.jpeg" alt="Vôlei Misto">
+                            </div>
+                            <div class="mod-card-content">
+                                <span class="mod-card-badge">VÔLEI</span>
+                                <h3>Vôlei Misto</h3>
+                                <p>Equipe mista disputando torneios regionais e InterSesi.</p>
+                                <span class="mod-card-link">Ver Elenco →</span>
                             </div>
                         </div>
 
-                        <div id="atletas-grid" class="atletas-grid">
-                            <!-- Preenchido via script.js -->
+                        <div class="mod-select-card" onclick="abrirElencoModalidade('futsal')">
+                            <div class="mod-card-img">
+                                <img src="Imagens/futsal.avif" alt="Futsal Masculino">
+                            </div>
+                            <div class="mod-card-content">
+                                <span class="mod-card-badge">FUTSAL</span>
+                                <h3>Futsal Masculino</h3>
+                                <p>Time bicampeão regional com forte rendimento em quadra.</p>
+                                <span class="mod-card-link">Ver Elenco →</span>
+                            </div>
+                        </div>
+
+                        <div class="mod-select-card" onclick="abrirElencoModalidade('handebol')">
+                            <div class="mod-card-img">
+                                <img src="Imagens/handbol.jpg" alt="Handebol Feminino">
+                            </div>
+                            <div class="mod-card-content">
+                                <span class="mod-card-badge">HANDEBOL</span>
+                                <h3>Handebol Feminino</h3>
+                                <p>Atletas competindo na liga estadual de handebol.</p>
+                                <span class="mod-card-link">Ver Elenco →</span>
+                            </div>
+                        </div>
+
+                        <div class="mod-select-card" onclick="abrirElencoModalidade('tenis')">
+                            <div class="mod-card-img">
+                                <img src="Imagens/pingpong.jpg" alt="Tênis de Mesa em Dupla">
+                            </div>
+                            <div class="mod-card-content">
+                                <span class="mod-card-badge">TÊNIS DE MESA</span>
+                                <h3>Tênis de Mesa em Dupla</h3>
+                                <p>Dupla de alta velocidade e precisão técnica.</p>
+                                <span class="mod-card-link">Ver Elenco →</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sub-seção 2: Tela do Elenco (Aparece ao Clicar) -->
+                <div id="sub-modalidade-detalhe" class="sub-secao">
+                    <div class="modalidades-container">
+                        <button class="back-link-btn" onclick="voltarParaListaModalidades()">← Voltar para Modalidades</button>
+
+                        <div class="filtros-modalidades">
+                            <button class="mod-btn" onclick="trocarModalidade('volei')">Vôlei Misto</button>
+                            <button class="mod-btn" onclick="trocarModalidade('futsal')">Futsal Masculino</button>
+                            <button class="mod-btn" onclick="trocarModalidade('handebol')">Handebol Feminino</button>
+                            <button class="mod-btn" onclick="trocarModalidade('tenis')">Tênis de Mesa em Dupla</button>
+                        </div>
+
+                        <div id="modalidade-conteudo" class="modalidade-content">
+                            <div class="elenco-banner">
+                                <img id="elenco-img" src="Imagens/volei.jpeg" alt="Quadra SESI">
+                                <div class="elenco-overlay-info">
+                                    <div id="elenco-badge" class="elenco-badge">VÔLEI<br><span>(MISTO)</span></div>
+                                    <div id="elenco-desc" class="elenco-desc-box">
+                                        Conheça a equipe de vôlei mista responsável por competir no InterSesi
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="atletas-grid" class="atletas-grid">
+                                <!-- Preenchido via script.js -->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -308,19 +365,19 @@
                     <div class="uniforme-display-card">
                         <div class="uniforme-views-grid">
                             <div class="uni-view">
-                                <img id="uni-frente" src="./Imagens/uniforme frente.png" alt="Uniforme Frente">
+                                <img id="uni-frente" src="Imagens/uniforme frente.jpg" alt="Uniforme Frente">
                                 <span>Frente</span>
                             </div>
                             <div class="uni-view">
-                                <img id="uni-lado1" src="./Imagens/unifotme lado 1.png" alt="Perfil Esquerdo">
+                                <img id="uni-lado1" src="Imagens/unifotme lado 1.jpg" alt="Perfil Esquerdo">
                                 <span>Perfil Esquerdo</span>
                             </div>
                             <div class="uni-view">
-                                <img id="uni-costas" src="./Imagens/uniforme costas.png" alt="Costas">
+                                <img id="uni-costas" src="Imagens/uniforme costas.jpg" alt="Costas">
                                 <span>Costas (Personalizado)</span>
                             </div>
                             <div class="uni-view">
-                                <img id="uni-lado2" src="./Imagens/uniforme lado 2.png" alt="Perfil Direito">
+                                <img id="uni-lado2" src="Imagens/uniforme lado 2.jpg" alt="Perfil Direito">
                                 <span>Perfil Direito</span>
                             </div>
                         </div>
