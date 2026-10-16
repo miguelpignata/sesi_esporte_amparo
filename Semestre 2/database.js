@@ -1,17 +1,16 @@
-// Banco de dados simulado das solicitações de treino
 const bancoDadosTreinos = [
     {
         id: 1,
-        nome: "Miguel Pignata",
-        email: "miguel@exemplo.com",
+        nome: "Miguel Cardoso Pignata",
+        email: "miguel.pignata@portalsesisp.org.br",
         modalidade: "Vôlei Misto",
-        data_nascimento: "2006-05-15"
+        data_nascimento: "2009-09-09"
     },
     {
         id: 2,
-        nome: "Thiago Lima",
-        email: "thiago@exemplo.com",
+        nome: "Thiago Lima Amaral",
+        email: "thiago.amaral@portalsesisp.org.br",
         modalidade: "Futsal Masculino",
-        data_nascimento: "2006-08-22"
+        data_nascimento: "2009-09-08"
     }
 ];

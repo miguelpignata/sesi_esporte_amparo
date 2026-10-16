@@ -1,4 +1,3 @@
-// --- NAVEGAÇÃO ENTRE SEÇÕES ---
 function mudarSecao(idSecao) {
     const secoes = document.querySelectorAll('.secao');
     secoes.forEach(secao => secao.classList.remove('ativa'));
@@ -16,7 +15,6 @@ function mudarSecao(idSecao) {
         }
     });
 
-    // Resetar para tela de seleção ao entrar em Modalidades ou Notícias
     if (idSecao === 'modalidades') {
         voltarParaListaModalidades();
     } else if (idSecao === 'noticias') {
@@ -24,7 +22,6 @@ function mudarSecao(idSecao) {
     }
 }
 
-// --- NOTÍCIAS ---
 function filtrarNoticia(categoria) {
     const botoesFiltro = document.querySelectorAll('.filtro-btn');
     botoesFiltro.forEach(btn => btn.classList.remove('active'));
@@ -50,7 +47,6 @@ function voltarParaListaNoticias() {
     document.getElementById('sub-noticias-lista').classList.add('ativa-sub');
 }
 
-// --- MODALIDADES (Navegação em Sub-Telas) ---
 function abrirElencoModalidade(chave) {
     const subSecoes = document.querySelectorAll('#modalidades .sub-secao');
     subSecoes.forEach(sub => sub.classList.remove('ativa-sub'));
@@ -79,40 +75,47 @@ const dadosModalidades = {
         descricao: "Conheça a equipe de vôlei mista responsável por competir no InterSesi",
         imagemElenco: "Imagens/volei.jpeg",
         atletas: [
-            { nome: "Julia Novo", num: "03", ano: "2008", img: "Imagens/pig.jpeg" },
-            { nome: "Joana Fabrin", num: "05", ano: "2007", img: "Imagens/enzadas.jpeg" },
-            { nome: "Alicia Coelho", num: "11", ano: "2009", img: "Imagens/pig.jpeg" },
-            { nome: "Miguel Pignata", num: "17", ano: "2006", img: "Imagens/enzadas.jpeg" },
-            { nome: "Enzo Macedo", num: "18", ano: "2007", img: "Imagens/pig.jpeg" }
-        ]
+            { nome: "Giovana Remorini", num: "03", ano: "2009", img: "Imagens/pig.jpeg" },
+            { nome: "Yasmin Alexandre", num: "05", ano: "2011", img: "Imagens/enzadas.jpeg" },
+            { nome: "Alicia Coelho", num: "11", ano: "2010", img: "Imagens/pig.jpeg" },
+            { nome: "Miguel Pignata", num: "17", ano: "2009", img: "Imagens/pig.jpeg" },
+            { nome: "Enzo Macedo", num: "18", ano: "2008", img: "Imagens/enzadas.jpeg" },
+            { nome: "Letícia Guarizo", num: "28", ano: "2010", img: "Imagens/pig.jpeg" }
+                    ]
     },
     futsal: {
         titulo: "FUTSAL<br><span>(MASCULINO)</span>",
-        descricao: "Equipe bicampeã regional de futsal com alto índice de vitórias",
+        descricao: "Time com forte rendimento em quadra",
         imagemElenco: "Imagens/futsal.avif",
         atletas: [
-            { nome: "Thiago Amaral", num: "07", ano: "2006", img: "Imagens/enzadas.jpeg" },
-            { nome: "Luis Capitão", num: "10", ano: "2005", img: "Imagens/pig.jpeg" },
-            { nome: "Lucas Silva", num: "12", ano: "2007", img: "Imagens/enzadas.jpeg" },
-            { nome: "Gabriel Santos", num: "05", ano: "2006", img: "Imagens/pig.jpeg" }
+            { nome: "Luis Pereira", num: "1", ano: "2008", img: "Imagens/enzadas.jpeg" },
+            { nome: "Thiago Amaral", num: "5", ano: "2009", img: "Imagens/enzadas.jpeg" },
+            { nome: "Kaique Pavan", num: "7", ano: "2008", img: "Imagens/pig.jpeg" },
+            { nome: "Luis Scorcer", num: "8", ano: "2009", img: "Imagens/enzadas.jpeg" },
+            { nome: "Juliano Moraes", num: "10", ano: "2007", img: "Imagens/pig.jpeg" }
         ]
     },
     handebol: {
         titulo: "HANDEBOL<br><span>(FEMININO)</span>",
-        descricao: "Atletas de alto rendimento disputando a liga paulista de handebol",
+        descricao: "Atletas competindo na liga InterSesi de handebol.",
         imagemElenco: "Imagens/handbol.jpg",
         atletas: [
-            { nome: "Beatriz Lima", num: "04", ano: "2008", img: "Imagens/pig.jpeg" },
-            { nome: "Mariana Souza", num: "08", ano: "2007", img: "Imagens/enzadas.jpeg" }
+            { nome: "Beatriz Lima", num: "04", ano: "2010", img: "Imagens/pig.jpeg" },
+            { nome: "Beatriz Lima", num: "04", ano: "2010", img: "Imagens/pig.jpeg" },
+            { nome: "Beatriz Lima", num: "04", ano: "2010", img: "Imagens/pig.jpeg" },
+            { nome: "Beatriz Lima", num: "04", ano: "2010", img: "Imagens/pig.jpeg" },
+            { nome: "Beatriz Lima", num: "04", ano: "2010", img: "Imagens/pig.jpeg" },
+            { nome: "Beatriz Lima", num: "04", ano: "2010", img: "Imagens/pig.jpeg" },
+            { nome: "Mariana Souza", num: "08", ano: "2010", img: "Imagens/enzadas.jpeg" }
         ]
     },
     tenis: {
         titulo: "TÊNIS DE MESA<br><span>(DUPLA)</span>",
-        descricao: "Dupla de alta precisão técnica e sincronia nas mesas do SESI",
+        descricao: "Dupla de alta velocidade e precisão técnica.",
         imagemElenco: "Imagens/pingpong.jpg",
         atletas: [
-            { nome: "Pedro Rocha", num: "02", ano: "2008", img: "Imagens/enzadas.jpeg" },
-            { nome: "Felipe Andrade", num: "09", ano: "2008", img: "Imagens/pig.jpeg" }
+            { nome: "Nicolas Felisbelo", num: "01", ano: "2008", img: "Imagens/enzadas.jpeg" },
+            { nome: "Marina Defendi", num: "02", ano: "2008", img: "Imagens/pig.jpeg" }
         ]
     }
 };
@@ -155,25 +158,24 @@ function trocarModalidade(chave) {
     });
 }
 
-// --- UNIFORMES ---
 const dadosUniformes = {
     jogo1: {
-        frente: "Imagens/uniforme frente.jpg",
-        lado1: "Imagens/unifotme lado 1.jpg",
-        costas: "Imagens/uniforme costas.jpg",
-        lado2: "Imagens/uniforme lado 2.jpg"
+        frente: "./Imagens/uniforme frente.png",
+        lado1: "./Imagens/unifotme lado 1.png",
+        costas: "./Imagens/uniforme costas.png",
+        lado2: "./Imagens/uniforme lado 2.png"
     },
     jogo2: {
-        frente: "Imagens/uniforme frente.jpg",
-        lado1: "Imagens/unifotme lado 1.jpg",
-        costas: "Imagens/uniforme costas.jpg",
-        lado2: "Imagens/uniforme lado 2.jpg"
+        frente: "./Imagens/uniforme frente.png",
+        lado1: "./Imagens/unifotme lado 1.png",
+        costas: "./Imagens/uniforme costas.png",
+        lado2: "./Imagens/uniforme lado 2.png"
     },
     treino: {
-        frente: "Imagens/uniforme frente.jpg",
-        lado1: "Imagens/unifotme lado 1.jpg",
-        costas: "Imagens/uniforme costas.jpg",
-        lado2: "Imagens/uniforme lado 2.jpg"
+        frente: "./Imagens/uniforme frente.png",
+        lado1: "./Imagens/unifotme lado 1.png",
+        costas: "./Imagens/uniforme costas.png",
+        lado2: "./Imagens/uniforme lado 2.png"
     }
 };
 
@@ -199,20 +201,30 @@ function trocarUniforme(tipo) {
     if (elLado2) elLado2.src = kit.lado2;
 }
 
-// --- CALENDÁRIO ---
 const nomesMeses = [
     "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
     "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
 ];
 
 const eventosCadastrados = {
-    "2026-5-8": "Lista de Convocados Oficiais para o InterSesi em Jundiaí.",
-    "2026-5-10": "Dia de Fotos e Filmagens para Atualização do Site.",
-    "2026-5-17": "Lista de Confirmação dos Capitães e Comissão.",
-    "2026-5-20": "InterSesi em Jundiaí (das 8:30 às 17:00).",
-    "2026-9-15": "Seletiva de Vôlei Masculino Sub-17.",
-    "2026-9-22": "Festival Interno de Futsal do SESI Amparo.",
-    "2026-10-10": "Entrega de Medalhas do Semestre Esportivo."
+    "2026-5-09": "JEA Futal Pré Mirim",
+    "2026-5-16": "JEA Futsal Mirim",
+    "2026-5-23": "JEA de Xadrez e Damas",
+    "2026-5-30": "JEA Futsal Infantil",
+    "2026-6-20": "Intersesi em Jundiaí (das 8:30 às 17:00)",
+    "2026-6-20": "JEA Futsal Juvenil",
+    "2026-8-22": "JEA Handebol Infantil",
+    "2026-9-05": "JEA Handebol Juvenil",
+    "2026-9-19": "JEA Vôlei Infantil e Juvenil",
+    "2026-9-26": "JEA Vôlei Mirim e Pré Mirim,
+    "2026-10-03": "JEA Queimada Mirim e Pré Mirim",
+    "2026-10-17": "JEA Queimada Infantil e Juvenil",
+    "2026-10-24": "JEA Basquete 3x3",
+    "2026-11-09": "Interclasse dia 1.",
+    "2026-11-10": "Interclasse dia 2.",
+    "2026-11-11": "Interclasse dia 3.",
+    "2026-11-12": "Interclasse dia 4.",
+    "2026-11-13": "Interclasse dia 5."
 };
 
 let dataAtualCalendario = new Date();
@@ -296,7 +308,6 @@ function mudarMes(delta) {
     renderizarCalendario();
 }
 
-// --- SOLICITAÇÃO DE TREINO E TABELA ---
 function renderizarTabelaTreinos() {
     const container = document.getElementById('tabela-solicitacoes-container');
     if (!container) return;
@@ -360,7 +371,6 @@ function enviarSolicitacaoTreino(event) {
     alert(`Solicitação de treino em ${modalidade} realizada com sucesso para ${nome}!`);
 }
 
-// Inicialização segura
 window.onload = function() {
     renderizarCalendario();
     renderizarTabelaTreinos();
