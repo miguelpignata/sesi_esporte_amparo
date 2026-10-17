@@ -216,7 +216,7 @@ const eventosCadastrados = {
     "2026-8-22": "JEA Handebol Infantil",
     "2026-9-05": "JEA Handebol Juvenil",
     "2026-9-19": "JEA Vôlei Infantil e Juvenil",
-    "2026-9-26": "JEA Vôlei Mirim e Pré Mirim,
+    "2026-9-26": "JEA Vôlei Mirim e Pré Mirim",
     "2026-10-03": "JEA Queimada Mirim e Pré Mirim",
     "2026-10-17": "JEA Queimada Infantil e Juvenil",
     "2026-10-24": "JEA Basquete 3x3",
