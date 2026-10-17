@@ -100,13 +100,13 @@ const dadosModalidades = {
         descricao: "Atletas competindo na liga InterSesi de handebol.",
         imagemElenco: "Imagens/handbol.jpg",
         atletas: [
-            { nome: "Beatriz Lima", num: "04", ano: "2010", img: "Imagens/pig.jpeg" },
-            { nome: "Beatriz Lima", num: "04", ano: "2010", img: "Imagens/pig.jpeg" },
-            { nome: "Beatriz Lima", num: "04", ano: "2010", img: "Imagens/pig.jpeg" },
-            { nome: "Beatriz Lima", num: "04", ano: "2010", img: "Imagens/pig.jpeg" },
-            { nome: "Beatriz Lima", num: "04", ano: "2010", img: "Imagens/pig.jpeg" },
-            { nome: "Beatriz Lima", num: "04", ano: "2010", img: "Imagens/pig.jpeg" },
-            { nome: "Mariana Souza", num: "08", ano: "2010", img: "Imagens/enzadas.jpeg" }
+            { nome: "Sara de Paula", num: "01", ano: "2010", img: "Imagens/pig.jpeg" },
+            { nome: "Livia Camargo", num: "02", ano: "2011", img: "Imagens/pig.jpeg" },
+            { nome: "Livia Fernandes", num: "03", ano: "2010", img: "Imagens/pig.jpeg" },
+            { nome: "Mirela Camilotti", num: "04", ano: "2009", img: "Imagens/pig.jpeg" },
+            { nome: "Kauany Rodrigues", num: "05", ano: "2011", img: "Imagens/pig.jpeg" },
+            { nome: "Joanne Lauriano", num: "06", ano: "2011", img: "Imagens/pig.jpeg" },
+            { nome: "Maria Laura", num: "07", ano: "2011", img: "Imagens/enzadas.jpeg" }
         ]
     },
     tenis: {
