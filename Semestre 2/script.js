@@ -75,12 +75,16 @@ const dadosModalidades = {
         descricao: "Conheça a equipe de vôlei mista responsável por competir no InterSesi",
         imagemElenco: "Imagens/volei.jpeg",
         atletas: [
-            { nome: "Giovana Remorini", num: "03", ano: "2009", img: "Imagens/pig.jpeg" },
-            { nome: "Yasmin Alexandre", num: "05", ano: "2011", img: "Imagens/enzadas.jpeg" },
-            { nome: "Alicia Coelho", num: "11", ano: "2010", img: "Imagens/pig.jpeg" },
-            { nome: "Miguel Pignata", num: "17", ano: "2009", img: "Imagens/pig.jpeg" },
-            { nome: "Enzo Macedo", num: "18", ano: "2008", img: "Imagens/enzadas.jpeg" },
-            { nome: "Letícia Guarizo", num: "28", ano: "2010", img: "Imagens/pig.jpeg" }
+            { nome: "Isabelle Moreira", num: "02", ano: "2009", img: "Imagens/Atletas/isabelle.jpeg" },
+            { nome: "Yasmim Alexandre", num: "03", ano: "2011", img: "Imagens/Atletas/yasmim.jpeg" },
+            { nome: "Vitória Bráz", num: "06", ano: "2011", img: "Imagens/Atletas/vitoria.jpeg" },
+            { nome: "Giovana Remorini", num: "07", ano: "2009", img: "Imagens/Atletas/remorini.jpeg" },
+            { nome: "Alicia Coelho", num: "11", ano: "2010", img: "Imagens/Atletas/alicia.jpeg" },
+            { nome: "Elloá Rodrigues", num: "15", ano: "2011", img: "Imagens/Atletas/eloa.jpeg" },
+            { nome: "Letícia Guarizzo ", num: "17", ano: "2011", img: "Imagens/Atletas/leticia.jpeg" },
+            { nome: "Enzo Macedo", num: "18", ano: "2008", img: "Imagens/Atletas/enzo.jpeg" },
+            { nome: "Miguel Pignata", num: "27", ano: "2009", img: "Imagens/Atletas/pignata.jpeg" },
+            { nome: "Miguel Dantas", num: "82", ano: "2011", img: "Imagens/Atletas/migueldantas.jpeg" }
                     ]
     },
     futsal: {
@@ -88,11 +92,16 @@ const dadosModalidades = {
         descricao: "Time com forte rendimento em quadra",
         imagemElenco: "Imagens/futsal.avif",
         atletas: [
-            { nome: "Luis Pereira", num: "1", ano: "2008", img: "Imagens/enzadas.jpeg" },
-            { nome: "Thiago Amaral", num: "5", ano: "2009", img: "Imagens/enzadas.jpeg" },
-            { nome: "Kaique Pavan", num: "7", ano: "2008", img: "Imagens/pig.jpeg" },
-            { nome: "Luis Scorcer", num: "8", ano: "2009", img: "Imagens/enzadas.jpeg" },
-            { nome: "Juliano Moraes", num: "10", ano: "2007", img: "Imagens/pig.jpeg" }
+            { nome: "Antônio Noronha", num: "01", ano: "2010", img: "Imagens/Atletas/antonio.jpeg" },
+            { nome: "Davi Cardeal", num: "07", ano: "2009", img: "Imagens/Atletas/davi.jpeg" },
+            { nome: "Thiago Amaral", num: "08", ano: "2009", img: "Imagens/Atletas/thiago.jpeg" },
+            { nome: "Rafael Chaves", num: "10", ano: "2010", img: "Imagens/Atletas/rafael.jpeg" },
+            { nome: "Heitor Baroni", num: "11", ano: "2011", img: "Imagens/Atletas/heitor.jpeg" },
+            { nome: "Davi Rodrigues", num: "12", ano: "2011", img: "Imagens/Atletas/davirodrigues.jpeg" },
+            { nome: "João Miguel", num: "14", ano: "2012", img: "Imagens/Atletas/joaomiguel.jpeg" },
+            { nome: "Miguel Cássio", num: "19", ano: "2012", img: "Imagens/Atletas/cassio.jpeg" },
+            { nome: "Giovani Schionato", num: "24", ano: "2012", img: "Imagens/Atletas/giovani.jpeg" },
+            { nome: "Vinicius Pereira", num: "44", ano: "2010", img: "Imagens/Atletas/vini.jpeg" }
         ]
     },
     handebol: {
@@ -100,13 +109,14 @@ const dadosModalidades = {
         descricao: "Atletas competindo na liga InterSesi de handebol.",
         imagemElenco: "Imagens/handbol.jpg",
         atletas: [
-            { nome: "Sara de Paula", num: "01", ano: "2010", img: "Imagens/pig.jpeg" },
-            { nome: "Livia Camargo", num: "02", ano: "2011", img: "Imagens/pig.jpeg" },
-            { nome: "Livia Fernandes", num: "03", ano: "2010", img: "Imagens/pig.jpeg" },
-            { nome: "Mirela Camilotti", num: "04", ano: "2009", img: "Imagens/pig.jpeg" },
-            { nome: "Kauany Rodrigues", num: "05", ano: "2011", img: "Imagens/pig.jpeg" },
-            { nome: "Joanne Lauriano", num: "06", ano: "2011", img: "Imagens/pig.jpeg" },
-            { nome: "Maria Laura", num: "07", ano: "2011", img: "Imagens/enzadas.jpeg" }
+            { nome: "Kauany Lopes", num: "06", ano: "2011", img: "Imagens/Atletas/kauany.jpeg" },
+            { nome: "Julia Souza", num: "07", ano: "2012", img: "Imagens/Atletas/juliasouza.jpeg" },
+            { nome: "Julia Vascon", num: "09", ano: "2012", img: "Imagens/Atletas/julia.jpeg" },
+            { nome: "Maria Laura", num: "10", ano: "2011", img: "Imagens/Atletas/marialaura.jpeg" },
+            { nome: "Joanne Lauriano", num: "18", ano: "2011", img: "Imagens/Atletas/joane.jpeg" },
+            { nome: "Lívia Morais", num: "22", ano: "2010", img: "Imagens/Atletas/liviamorais.jpeg" },
+            { nome: "Lívia Camargo", num: "23", ano: "2011", img: "Imagens/Atletas/liviacamargo.jpeg" },
+            { nome: "Sara de Paula", num: "44", ano: "2010", img: "Imagens/Atletas/sara.jpeg" }
         ]
     },
     tenis: {
@@ -114,8 +124,8 @@ const dadosModalidades = {
         descricao: "Dupla de alta velocidade e precisão técnica.",
         imagemElenco: "Imagens/pingpong.jpg",
         atletas: [
-            { nome: "Nicolas Felisbelo", num: "01", ano: "2008", img: "Imagens/enzadas.jpeg" },
-            { nome: "Marina Defendi", num: "02", ano: "2008", img: "Imagens/pig.jpeg" }
+            { nome: "Heros Rodrigo", num: "07", ano: "2010", img: "Imagens/Atletas/Heros.jpeg" },
+            { nome: "Eloah Souza", num: "10", ano: "2010", img: "Imagens/Atletas/eloah.jpeg" }
         ]
     }
 };
@@ -124,7 +134,6 @@ function trocarModalidade(chave) {
     const botoesMod = document.querySelectorAll('.mod-btn');
     botoesMod.forEach(btn => btn.classList.remove('active'));
 
-    // Marcar botão ativo do menu interno
     botoesMod.forEach(btn => {
         const onClickAttr = btn.getAttribute('onclick');
         if (onClickAttr && onClickAttr.includes(`'${chave}'`)) {
@@ -160,22 +169,22 @@ function trocarModalidade(chave) {
 
 const dadosUniformes = {
     jogo1: {
-        frente: "./Imagens/uniforme frente.png",
-        lado1: "./Imagens/unifotme lado 1.png",
-        costas: "./Imagens/uniforme costas.png",
-        lado2: "./Imagens/uniforme lado 2.png"
+        frente: "./Uniformes/Imagens/uniforme frente 1.png",
+        lado1: "./Uniformes/Imagens/unifotme lado 1 1.png",
+        costas: "./Uniformes/Imagens/uniforme costas 1.png",
+        lado2: "./Uniformes/Imagens/uniforme lado 2 1.png"
     },
     jogo2: {
-        frente: "./Imagens/uniforme frente.png",
-        lado1: "./Imagens/unifotme lado 1.png",
-        costas: "./Imagens/uniforme costas.png",
-        lado2: "./Imagens/uniforme lado 2.png"
+        frente: "./Uniformes/Imagens/uniforme frente 2.png",
+        lado1: "./Uniformes/Imagens/unifotme lado 1 2.png",
+        costas: "./Uniformes/Imagens/uniforme costas 2.png",
+        lado2: "./Uniformes/Imagens/uniforme lado 2 2.png"
     },
-    treino: {
-        frente: "./Imagens/uniforme frente.png",
-        lado1: "./Imagens/unifotme lado 1.png",
-        costas: "./Imagens/uniforme costas.png",
-        lado2: "./Imagens/uniforme lado 2.png"
+    gol: {
+        frente: "./Uniformes/Imagens/",
+        lado1: "./Uniformes/Imagens/",
+        costas: "./Uniformes/Imagens/",
+        lado2: "./Uniformes/Imagens/"
     }
 };
 
