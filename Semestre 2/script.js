@@ -73,7 +73,7 @@ const dadosModalidades = {
     volei: {
         titulo: "VÔLEI<br><span>(MISTO)</span>",
         descricao: "Conheça a equipe de vôlei mista responsável por competir no InterSesi",
-        imagemElenco: "Imagens/volei.jpeg",
+        imagemElenco: "./Imagens/Modalidades/volei.jpeg",
         atletas: [
             { nome: "Isabelle Moreira", num: "02", ano: "2009", img: "Imagens/Atletas/isabelle.jpeg" },
             { nome: "Yasmim Alexandre", num: "03", ano: "2011", img: "Imagens/Atletas/yasmim.jpeg" },
@@ -90,7 +90,7 @@ const dadosModalidades = {
     futsal: {
         titulo: "FUTSAL<br><span>(MASCULINO)</span>",
         descricao: "Time com forte rendimento em quadra",
-        imagemElenco: "Imagens/futsal.avif",
+        imagemElenco: "./Imagens/Modalidades/futsal.avif",
         atletas: [
             { nome: "Antônio Noronha", num: "01", ano: "2010", img: "Imagens/Atletas/antonio.jpeg" },
             { nome: "Davi Cardeal", num: "07", ano: "2009", img: "Imagens/Atletas/davi.jpeg" },
@@ -107,7 +107,7 @@ const dadosModalidades = {
     handebol: {
         titulo: "HANDEBOL<br><span>(FEMININO)</span>",
         descricao: "Atletas competindo na liga InterSesi de handebol.",
-        imagemElenco: "Imagens/handbol.jpg",
+        imagemElenco: "./Imagens/Modalidades/handbol.jpg",
         atletas: [
             { nome: "Kauany Lopes", num: "06", ano: "2011", img: "Imagens/Atletas/kauany.jpeg" },
             { nome: "Julia Souza", num: "07", ano: "2012", img: "Imagens/Atletas/juliasouza.jpeg" },
@@ -122,7 +122,7 @@ const dadosModalidades = {
     tenis: {
         titulo: "TÊNIS DE MESA<br><span>(DUPLA)</span>",
         descricao: "Dupla de alta velocidade e precisão técnica.",
-        imagemElenco: "Imagens/pingpong.jpg",
+        imagemElenco: "./Imagens/Modalidades/pingpong.jpg",
         atletas: [
             { nome: "Heros Rodrigo", num: "07", ano: "2010", img: "Imagens/Atletas/Heros.jpeg" },
             { nome: "Eloah Souza", num: "10", ano: "2010", img: "Imagens/Atletas/eloah.jpeg" }
