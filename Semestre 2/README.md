@@ -1,6 +1,6 @@
 # SESI Esporte Amparo - Semestre 2 🏆
 
-Bem-vindo à documentação do repositório **SESI Esporte Amparo**, referente ao desenvolvimento do projeto no **2º Semestre**. Este repositório centraliza as especificações, estrutura de banco de dados e arquivos do sistema voltado para a gestão e acompanhamento de atividades esportivas e atletas da unidade do SESI Amparo.
+Bem-vindo à documentação do repositório referente ao 2º semestre de desenvolvimento do projeto **SESI Esporte Amparo**, referente ao desenvolvimento do projeto no **2º Semestre**. Este repositório centraliza as especificações, estrutura de banco de dados e arquivos do sistema voltado para a gestão e acompanhamento de atividades esportivas e atletas da unidade do SESI Amparo.
 
 ---
 
