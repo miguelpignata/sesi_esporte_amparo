@@ -169,22 +169,22 @@ function trocarModalidade(chave) {
 
 const dadosUniformes = {
     jogo1: {
-        frente: "./Uniformes/Imagens/uniforme frente 1.png",
-        lado1: "./Uniformes/Imagens/unifotme lado 1 1.png",
-        costas: "./Uniformes/Imagens/uniforme costas 1.png",
-        lado2: "./Uniformes/Imagens/uniforme lado 2 1.png"
+        frente: "./Imagens/Uniformes/uniforme frente 1.png",
+        lado1: "./Imagens/Uniformes/unifotme lado 1 1.png",
+        costas: "./Imagens/Uniformes/uniforme costas 1.png",
+        lado2: "./Imagens/Uniformes/uniforme lado 2 1.png"
     },
     jogo2: {
-        frente: "./Uniformes/Imagens/uniforme frente 2.png",
-        lado1: "./Uniformes/Imagens/unifotme lado 1 2.png",
-        costas: "./Uniformes/Imagens/uniforme costas 2.png",
-        lado2: "./Uniformes/Imagens/uniforme lado 2 2.png"
+        frente: "./Imagens/Uniformes/uniforme frente 2.png",
+        lado1: "./Imagens/Uniformes/unifotme lado 1 2.png",
+        costas: "./Imagens/Uniformes/uniforme costas 2.png",
+        lado2: "./Imagens/Uniformes/uniforme lado 2 2.png"
     },
     gol: {
-        frente: "./Uniformes/Imagens/",
-        lado1: "./Uniformes/Imagens/",
-        costas: "./Uniformes/Imagens/",
-        lado2: "./Uniformes/Imagens/"
+        frente: "./Imagens/Uniformes/uniforme frente gol.png",
+        lado1: "./Imagens/Uniformes/unifotme lado 1 gol.png",
+        costas: "./Imagens/Uniformes/uniforme costas gol.png",
+        lado2: "./Imagens/Uniformes/uniforme lado 2 gol.png"
     }
 };
 
