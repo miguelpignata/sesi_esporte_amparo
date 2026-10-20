@@ -56,7 +56,7 @@ Imagem da Regra de Negócio
 
 2. **Abra o arquivo index.html**
    - Abra a pasta clonada;
-   - Identifique o arquivo index.html (no 2° Semestre);
+   - Identifique o arquivo index.html (na pasta "Semestre 2");
    - Abra o arquivo.
 
 ---
