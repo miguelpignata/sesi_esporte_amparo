@@ -40,11 +40,11 @@
                     <p>Formando campeões dentro e fora das quadras.<br>Conheça nossas modalidades, acompanhe as novidades e faça parte do time.</p>
                     <div class="hero-stats">
                         <div class="stat-box">
-                            <strong>+ de 4</strong>
+                            <strong>+ de 3</strong>
                             <span>Modalidades Esportivas</span>
                         </div>
                         <div class="stat-box">
-                            <strong>+ de 50</strong>
+                            <strong>+ de 30</strong>
                             <span>Atletas</span>
                         </div>
                         <div class="stat-box action" onclick="mudarSecao('treinos')">
@@ -68,11 +68,10 @@
                         <button class="filtro-btn" onclick="filtrarNoticia('futsal')">Futsal</button>
                         <button class="filtro-btn" onclick="filtrarNoticia('tenisMesa')">Tênis de Mesa</button>
                         <button class="filtro-btn" onclick="filtrarNoticia('handebol')">Handebol</button>
-                        <button class="filtro-btn" onclick="filtrarNoticia('geral')">Geral</button>
                     </div>
 
                     <div class="noticias-grid">
-                        <div class="news-card" onclick="abrirNoticia('noticia-1')">
+                        <div class="news-card" data-categoria="volei" onclick="abrirNoticia('noticia-1')">
                             <div class="news-card-title">O futsal Joga e Ganha!!!</div>
                             <div class="news-card-footer">
                                 <div class="news-date">22/06/2026</div>
@@ -80,7 +79,7 @@
                             <p class="news-snippet">Sesi jogou contra o time Cat de Jundiaí e vence partida decisiva, porém, perde jogador após lesão.</p>
                         </div>
 
-                        <div class="news-card" onclick="abrirNoticia('noticia-2')">
+                        <div class="news-card" data-categoria="futsal" onclick="abrirNoticia('noticia-2')">
                             <div class="news-card-title">Vôlei dá um show na quadra!</div>
                             <div class="news-card-footer">
                                 <div class="news-date">22/06/2026</div>
@@ -88,7 +87,7 @@
                             <p class="news-snippet">A equipe feminina de Vôlei do Sesi Amparo vence o InterSesi e se consagra tricampeã consecutiva.</p>
                         </div>
 
-                        <div class="news-card" onclick="abrirNoticia('noticia-3')">
+                        <div class="news-card" data-categoria="handebol" onclick="abrirNoticia('noticia-3')">
                             <div class="news-card-title">Não foi o dia para o Handbol</div>
                             <div class="news-card-footer">
                                 <div class="news-date">22/06/2026</div>

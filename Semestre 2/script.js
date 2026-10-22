@@ -23,11 +23,24 @@ function mudarSecao(idSecao) {
 }
 
 function filtrarNoticia(categoria) {
-    const botoesFiltro = document.querySelectorAll('.filtro-btn');
-    botoesFiltro.forEach(btn => btn.classList.remove('active'));
-    if (window.event && window.event.target) {
-        window.event.target.classList.add('active');
-    }
+    const cards = document.querySelectorAll('.news-card');
+    const botoes = document.querySelectorAll('.filtro-btn');
+
+    botoes.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('onclick').includes(categoria)) {
+            btn.classList.add('active');
+        }
+    });
+
+    cards.forEach(card => {
+        const categoriaCard = card.getAttribute('data-categoria');
+        if (categoria === 'todas' || categoriaCard === categoria) {
+            card.style.display = 'block'; 
+        } else {
+            card.style.display = 'none';
+        }
+    });
 }
 
 function abrirNoticia(idNoticia) {
