@@ -243,7 +243,6 @@ body, html {
     line-height: 1.4;
 }
 
-/* LEITURA DE NOTÍCIAS */
 .article-wrapper {
     max-width: 1100px;
     margin: 0 auto;
@@ -374,7 +373,6 @@ body, html {
     color: #2d3748;
 }
 
-/* MODALIDADES (Com Grid de Seleção e Aumento de Altura dos Atletas) */
 .modalidades-centralizadas {
     max-width: 1100px;
     margin: 0 auto;
@@ -502,7 +500,7 @@ body, html {
 .elenco-banner {
     position: relative;
     width: 100%;
-    height: 260px;
+    height: 500px;
     border-radius: 12px;
     overflow: hidden;
     border: 3px solid #111;
@@ -525,12 +523,15 @@ body, html {
 }
 
 .elenco-badge {
-    background: #e30613;
+    background: #ff0000;
     color: #fff;
     padding: 8px 20px;
     border-radius: 12px;
     font-weight: 900;
     font-size: 18px;
+    border: 2px solid #111;
+    padding: 8px 15px;
+    border-radius: 10px;
 }
 
 .elenco-desc-box {
