@@ -234,7 +234,6 @@ const eventosCadastrados = {
     "2026-4-23": "JEA de Xadrez e Damas",
     "2026-4-30": "JEA Futsal Infantil",
     "2026-5-20": "Intersesi em Jundiaí (das 8:30 às 17:00)",
-    "2026-5-20": "JEA Futsal Juvenil",
     "2026-7-22": "JEA Handebol Infantil",
     "2026-8-5": "JEA Handebol Juvenil",
     "2026-8-19": "JEA Vôlei Infantil e Juvenil",
