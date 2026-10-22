@@ -25,6 +25,6 @@ const bancoDadosTreinos = [
         nome: "Davi Parrera Cardeal",
         email: "davi.cardeal@portalsesisp.org.br",
         modalidade: "Futsal Masculino",
-        data_nascimento: "2009-02-15"
+        data_nascimento: "2009-03-19"
     }
 ];
