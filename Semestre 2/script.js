@@ -216,24 +216,24 @@ const nomesMeses = [
 ];
 
 const eventosCadastrados = {
-    "2026-5-09": "JEA Futal Pré Mirim",
+    "2026-4-9": "JEA Futal Pré Mirim",
     "2026-5-16": "JEA Futsal Mirim",
-    "2026-5-23": "JEA de Xadrez e Damas",
-    "2026-5-30": "JEA Futsal Infantil",
-    "2026-6-20": "Intersesi em Jundiaí (das 8:30 às 17:00)",
-    "2026-6-20": "JEA Futsal Juvenil",
-    "2026-8-22": "JEA Handebol Infantil",
-    "2026-9-05": "JEA Handebol Juvenil",
-    "2026-9-19": "JEA Vôlei Infantil e Juvenil",
-    "2026-9-26": "JEA Vôlei Mirim e Pré Mirim",
-    "2026-10-03": "JEA Queimada Mirim e Pré Mirim",
-    "2026-10-17": "JEA Queimada Infantil e Juvenil",
-    "2026-10-24": "JEA Basquete 3x3",
-    "2026-11-09": "Interclasse dia 1.",
-    "2026-11-10": "Interclasse dia 2.",
-    "2026-11-11": "Interclasse dia 3.",
-    "2026-11-12": "Interclasse dia 4.",
-    "2026-11-13": "Interclasse dia 5."
+    "2026-4-23": "JEA de Xadrez e Damas",
+    "2026-4-30": "JEA Futsal Infantil",
+    "2026-5-20": "Intersesi em Jundiaí (das 8:30 às 17:00)",
+    "2026-5-20": "JEA Futsal Juvenil",
+    "2026-7-22": "JEA Handebol Infantil",
+    "2026-8-5": "JEA Handebol Juvenil",
+    "2026-8-19": "JEA Vôlei Infantil e Juvenil",
+    "2026-8-26": "JEA Vôlei Mirim e Pré Mirim",
+    "2026-9-3": "JEA Queimada Mirim e Pré Mirim",
+    "2026-9-17": "JEA Queimada Infantil e Juvenil",
+    "2026-9-24": "JEA Basquete 3x3",
+    "2026-10-9": "Interclasse dia 1.",
+    "2026-10-10": "Interclasse dia 2.",
+    "2026-10-11": "Interclasse dia 3.",
+    "2026-10-12": "Interclasse dia 4.",
+    "2026-10-13": "Interclasse dia 5."
 };
 
 let dataAtualCalendario = new Date();
