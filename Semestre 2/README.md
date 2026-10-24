@@ -65,6 +65,7 @@ Imagem da Regra de Negócio
 
 1. **Clique no site a seguir para abrir o Sesi Esporte Amparo:**
 
+[Sesi Esporte Amparo](https://miguelpignata.github.io/site_sesi_esporte_amparo/)
 
 ---
 
