@@ -35,7 +35,7 @@ No 2º Semestre, o foco principal do projeto esteve centrado na **modelagem rela
 
 ### Modelo de Entidade e Relacionamento Conceitual (MER)
 
-Imagem do MER
+![Imagem do MER](conceitual.drawio.png)
 
 ### Modelo de Entidade e Relacionamento Lógico (DER)
 
