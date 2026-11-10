@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SESI Esportes Amparo</title>
+    <link rel="icon" type="image/png" href="./Imagens/sesiesporteamparo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="site-container">
+        
+        <header class="site-header">
+
+            <a href="#inicio" class="logo-container" onclick="mudarSecao('inicio')">
+                <div class="logo-icon-img">
+                    <img src="./Imagens/sesiesporteamparo.png" alt="Logo SESI Esporte Amparo">
+                </div>
+                <div class="logo-text">SESI <span class="highlight">ESPORTE</span> AMPARO</div>
+            </a>
+
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="#inicio" class="nav-btn active" onclick="mudarSecao('inicio')">Início</a></li>
+                    <li><a href="#noticias" class="nav-btn" onclick="mudarSecao('noticias')">Notícias</a></li>
+                    <li><a href="#modalidades" class="nav-btn" onclick="mudarSecao('modalidades')">Modalidades</a></li>
+                    <li><a href="#calendario" class="nav-btn" onclick="mudarSecao('calendario')">Calendário</a></li>
+                    <li><a href="#uniformes" class="nav-btn" onclick="mudarSecao('uniformes')">Uniformes</a></li>
+                    <li><a href="#treinos" class="nav-btn" onclick="mudarSecao('treinos')">Treinos</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main-content">
+
+            <section id="inicio" class="secao ativa">
+                <div class="hero-card">
+                    <h1>SESI<br><span class="highlight">ESPORTES</span><br>AMPARO</h1>
+                    <p>Formando campeões dentro e fora das quadras.<br>Conheça nossas modalidades, acompanhe as novidades e faça parte do time.</p>
+                    <div class="hero-stats">
+                        <div class="stat-box">
+                            <strong>+ de 3</strong>
+                            <span>Modalidades Esportivas</span>
+                        </div>
+                        <div class="stat-box">
+                            <strong>+ de 30</strong>
+                            <span>Atletas</span>
+                        </div>
+                        <div class="stat-box action" onclick="mudarSecao('treinos')">
+                            <strong>Agende</strong>
+                            <span>seu treinamento</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="noticias" class="secao white-bg">
+                <div id="sub-noticias-lista" class="sub-secao ativa-sub noticias-centralizadas">
+                    <div class="noticias-header-top">
+                        <span class="sub-title-red">Novidades</span>
+                        <h2>NOTÍCIAS</h2>
+                    </div>
+
+                    <div class="filtros-noticias">
+                        <button class="filtro-btn active" onclick="filtrarNoticia('todas')">TODAS</button>
+                        <button class="filtro-btn" onclick="filtrarNoticia('volei')">Vôlei</button>
+                        <button class="filtro-btn" onclick="filtrarNoticia('futsal')">Futsal</button>
+                        <button class="filtro-btn" onclick="filtrarNoticia('tenisMesa')">Tênis de Mesa</button>
+                        <button class="filtro-btn" onclick="filtrarNoticia('handebol')">Handebol</button>
+                    </div>
+
+                    <div class="noticias-grid">
+                        <div class="news-card" data-categoria="volei" onclick="abrirNoticia('noticia-1')">
+                            <div class="news-card-title">O futsal Joga e Ganha!!!</div>
+                            <div class="news-card-footer">
+                                <div class="news-date">22/06/2026</div>
+                            </div>
+                            <p class="news-snippet">Sesi jogou contra o time Cat de Jundiaí e vence partida decisiva, porém, perde jogador após lesão.</p>
+                        </div>
+
+                        <div class="news-card" data-categoria="futsal" onclick="abrirNoticia('noticia-2')">
+                            <div class="news-card-title">Vôlei dá um show na quadra!</div>
+                            <div class="news-card-footer">
+                                <div class="news-date">22/06/2026</div>
+                            </div>
+                            <p class="news-snippet">A equipe feminina de Vôlei do Sesi Amparo vence o InterSesi e se consagra tricampeã consecutiva.</p>
+                        </div>
+
+                        <div class="news-card" data-categoria="handebol" onclick="abrirNoticia('noticia-3')">
+                            <div class="news-card-title">Não foi o dia para o Handbol</div>
+                            <div class="news-card-footer">
+                                <div class="news-date">22/06/2026</div>
+                            </div>
+                            <p class="news-snippet">Com um gol no último segundo, Sesi Amparo perde para Cajamar e cai na semifinal.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="noticia-1" class="sub-secao noticia-detalhe-secao">
+                    <div class="article-wrapper">
+                        <button class="back-link-btn" onclick="voltarParaListaNoticias()">← Voltar para Notícias</button>
+                        <div class="article-layout">
+                            <article class="article-card">
+                                <div class="article-header">
+                                    <span class="category-badge">FUTSAL</span>
+                                    <span class="article-date">📅 22 de junho de 2026</span>
+                                    <h1>O futsal Joga e Ganha!!!</h1>
+                                    <p class="article-subtitle">Mas a lesão na posterior de coxa do atleta Thiago preocupa a todos</p>
+                                </div>
+                                <div class="article-media">
+                                    <img src="./Imagens/Notícias/futsal.jpg" alt="Equipe de Futsal do SESI Campeã">
+                                </div>
+                                <div class="article-body">
+                                    <p>No último sábado (20), o <strong>Sesi Amparo</strong> sagrou-se campeão do prestigiado torneio <em>InterSesi</em> após vencer a forte equipe do Cat de Jundiaí pelo placar de 3 a 1. Porém, pouco antes do apito final do segundo tempo, o atleta Thiago Lima Amaral sofreu uma lesão na posterior da coxa esquerda.</p>
+                                    <br>
+                                    <p>Mesmo com a vitória, a lesão de Thiago preocupa a todos os envolvidos no projeto esportivo do Sesi Amparo.</p>
+                                    <br>
+                                    <p>O atleta está em tratamento e aguarda aprovacao para retornar aos treinos. Companheiros e técnicos acompanham de perto a recuperação do atleta.</p>
+                                </div>
+                            </article>
+                            <aside class="sidebar-news">
+                                <h3>Outras Notícias</h3>
+                                <div class="sidebar-card" onclick="abrirNoticia('noticia-2')">
+                                    <span class="mini-category">VÔLEI</span>
+                                    <h4>Vôlei dá um show na quadra!</h4>
+                                    <span class="mini-date">22/06/2026</span>
+                                </div>
+                                <div class="sidebar-card" onclick="abrirNoticia('noticia-3')">
+                                    <span class="mini-category">HANDBOL</span>
+                                    <h4>Não foi o dia para o Handbol</h4>
+                                    <span class="mini-date">22/06/2026</span>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="noticia-2" class="sub-secao noticia-detalhe-secao">
+                    <div class="article-wrapper">
+                        <button class="back-link-btn" onclick="voltarParaListaNoticias()">← Voltar para Notícias</button>
+                        <div class="article-layout">
+                            <article class="article-card">
+                                <div class="article-header">
+                                    <span class="category-badge">VÔLEI</span>
+                                    <span class="article-date">📅 22/06/2026</span>
+                                    <h1>Vôlei Feminino do Sesi dá um show na quadra!</h1>
+                                    <p class="article-subtitle">Não é uma, não é duas, são três... Três títulos da Copa InterSesi para elas!</p>
+                                </div>
+                                <div class="article-media">
+                                    <img src="./Imagens/Notícias/volei notícia.png" alt="Equipe de Vôlei Campeã no Pódio">
+                                </div>
+                                <div class="article-body">
+                                    <p>No último sábado (20) o Sesi Amparo se consagra como o único vencedor da copa InterSesi de vôlei feminino. Com vitórias nos anos de 2024, 2025 e 2026 o Sesi Amparo se torna tri campeão seguido.</p>
+                                    <br>
+                                    <p>Mesmo com uma derrota na fase de grupos, as atletas, com muita dedicação e resiliência, dão a volta por cima e conseguem garantir a vitória, levando ouro pela terceira vez seguida. </p>
+                                    <br>
+                                    <p>Diretamente do técnico Paulo: "Muito feliz com o desempenho delas, hoje é mais uma prova de que toda a dedicação e foco durante meses valeram a pena... Nada disso seria possível sem a resiliência delas!"</p>
+                                </div>
+                            </article>
+                            <aside class="sidebar-news">
+                                <h3>Outras Notícias</h3>
+                                <div class="sidebar-card" onclick="abrirNoticia('noticia-1')">
+                                    <span class="mini-category">FUTSAL</span>
+                                    <h4>O futsal Joga e Ganha!!!</h4>
+                                    <span class="mini-date">22/06/2026</span>
+                                </div>
+                                <div class="sidebar-card" onclick="abrirNoticia('noticia-3')">
+                                    <span class="mini-category">HANDBOL</span>
+                                    <h4>Não foi o dia para o Handbol</h4>
+                                    <span class="mini-date">22/06/2026</span>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="noticia-3" class="sub-secao noticia-detalhe-secao">
+                    <div class="article-wrapper">
+                        <button class="back-link-btn" onclick="voltarParaListaNoticias()">← Voltar para Notícias</button>
+                        <div class="article-layout">
+                            <article class="article-card">
+                                <div class="article-header">
+                                    <span class="category-badge">HANDBOL</span>
+                                    <span class="article-date">📅 22 de junho de 2026</span>
+                                    <h1>Não foi o dia para o Handbol</h1>
+                                    <p class="article-subtitle">Tudo pode mudar em 1 minuto. </p>
+                                </div>
+                                <div class="article-media">
+                                    <img src="./Imagens/Notícias/hand noticia.jpg" alt="Lance da partida esportiva">
+                                </div>
+                                <div class="article-body">
+                                    <p>Após uma difícil classificação para o mata a mata, a equipe feminina de handebol toda um gol no último minuto de jogo, levando a disputa pela vaga na final para os pênaltis.</p>
+                                    <br
+                                    <p>Após uma decisão questionável da arbitragem em marcar falta em um lance considerado por muitos "normal", em uma jogada de mestre da equipe Santana da Parnaíba, o Sesi Amparo toma gol no último minuto, levando a semifinal para os pênaltis. </p>
+                                    <br>
+                                    <p>E infelizmente não foi dessa vez! Nas cobranças alternadas Santana da Parnaíba converte, mas Amparo não, acabando com o sonho de garantir mais uma modalidade na final.</p>
+                                    <br>
+                                    <p>Ao final da partida, a atleta Lívia Morais foi entrevistada e deu a seguinte declaração: "Tínhamos o jogo em mãos, porém uma decisão absurda da arbitragem mudou tudo... garanto que se não fosse isso, o resultado teria sido completamente diferente"</p>
+                                </div>
+                            </article>
+                            <aside class="sidebar-news">
+                                <h3>Outras Notícias</h3>
+                                <div class="sidebar-card" onclick="abrirNoticia('noticia-1')">
+                                    <span class="mini-category">FUTSAL</span>
+                                    <h4>O futsal Joga e Ganha!!!</h4>
+                                    <span class="mini-date">22/06/2026</span>
+                                </div>
+                                <div class="sidebar-card" onclick="abrirNoticia('noticia-2')">
+                                    <span class="mini-category">VÔLEI</span>
+                                    <h4>Vôlei dá um show na quadra!</h4>
+                                    <span class="mini-date">22/06/2026</span>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="modalidades" class="secao white-bg">
+     
+                <div id="sub-modalidades-lista" class="sub-secao ativa-sub modalidades-centralizadas">
+                    <div class="modalidades-header-top">
+                        <span class="sub-title-red">Nossas Equipes</span>
+                        <h2>SELEÇÃO DE MODALIDADES</h2>
+                        <p class="sub-desc-text">Selecione uma modalidade abaixo para visualizar o elenco de atletas e detalhes da equipe.</p>
+                    </div>
+
+                    <div class="modalidades-grid-cards">
+                        <div class="mod-select-card" onclick="abrirElencoModalidade('volei')">
+                            <div class="mod-card-img">
+                                <img src="./Imagens/Modalidades/volei.jpeg" alt="Vôlei Misto">
+                            </div>
+                            <div class="mod-card-content">
+                                <span class="mod-card-badge">VÔLEI</span>
+                                <h3>Vôlei Misto</h3>
+                                <p>Equipe mista disputando torneios municipais e InterSesi.</p>
+                                <span class="mod-card-link">Ver Elenco →</span>
+                            </div>
+                        </div>
+
+                        <div class="mod-select-card" onclick="abrirElencoModalidade('futsal')">
+                            <div class="mod-card-img">
+                                <img src="./Imagens/Modalidades/futsal.avif" alt="Futsal Masculino">
+                            </div>
+                            <div class="mod-card-content">
+                                <span class="mod-card-badge">FUTSAL</span>
+                                <h3>Futsal Masculino</h3>
+                                <p>Time com forte rendimento em quadra.</p>
+                                <span class="mod-card-link">Ver Elenco →</span>
+                            </div>
+                        </div>
+
+                        <div class="mod-select-card" onclick="abrirElencoModalidade('handebol')">
+                            <div class="mod-card-img">
+                                <img src="./Imagens/Modalidades/handbol.jpg" alt="Handebol Feminino">
+                            </div>
+                            <div class="mod-card-content">
+                                <span class="mod-card-badge">HANDEBOL</span>
+                                <h3>Handebol Feminino</h3>
+                                <p>Atletas competindo na liga InterSesi de handebol.</p>
+                                <span class="mod-card-link">Ver Elenco →</span>
+                            </div>
+                        </div>
+
+                        <div class="mod-select-card" onclick="abrirElencoModalidade('tenis')">
+                            <div class="mod-card-img">
+                                <img src="./Imagens/Modalidades/pingpong.jpg" alt="Tênis de Mesa em Dupla">
+                            </div>
+                            <div class="mod-card-content">
+                                <span class="mod-card-badge">TÊNIS DE MESA</span>
+                                <h3>Tênis de Mesa em Dupla</h3>
+                                <p>Dupla de alta velocidade e precisão técnica.</p>
+                                <span class="mod-card-link">Ver Elenco →</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="sub-modalidade-detalhe" class="sub-secao">
+                    <div class="modalidades-container">
+                        <button class="back-link-btn" onclick="voltarParaListaModalidades()">← Voltar para Modalidades</button>
+                        <div class="filtros-modalidades">
+                            <button class="mod-btn" onclick="trocarModalidade('volei')">Vôlei Misto</button>
+                            <button class="mod-btn" onclick="trocarModalidade('futsal')">Futsal Masculino</button>
+                            <button class="mod-btn" onclick="trocarModalidade('handebol')">Handebol Feminino</button>
+                            <button class="mod-btn" onclick="trocarModalidade('tenis')">Tênis de Mesa em Dupla</button>
+                        </div>
+
+                        <div id="modalidade-conteudo" class="modalidade-content">
+                            <div class="elenco-banner">
+                                <img id="elenco-img" src="./Imagens/Modalidades/volei.jpeg" alt="Quadra SESI">
+                                <div class="elenco-overlay-info">
+                                    <div id="elenco-badge" class="elenco-badge">VÔLEI<br><span>(MISTO)</span></div>
+                                    <div id="elenco-desc" class="elenco-desc-box">
+                                        Conheça a equipe de vôlei mista responsável por competir no InterSesi
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="atletas-grid" class="atletas-grid"></div>
+
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="calendario" class="secao white-bg">
+                <div class="calendario-container">
+                    <div class="calendario-header">
+                        <span class="sub-title-red">Próximos Jogos</span>
+                        <h2>CALENDÁRIO ESPORTIVO</h2>
+                    </div>
+
+                    <div class="calendario-layout">
+                        <div class="calendario-card">
+                            <div class="cal-nav">
+                                <button class="cal-arrow" onclick="mudarMes(-1)">⇦</button>
+                                <div class="cal-month-year">
+                                    <span id="cal-month-name" class="cal-month">Mês</span>
+                                    <span id="cal-year-number" class="cal-year">2026</span>
+                                </div>
+                                <button class="cal-arrow" onclick="mudarMes(1)">⇨</button>
+                            </div>
+
+                            <div class="cal-days-header">
+                                <span>Se</span>
+                                <span>Te</span>
+                                <span>Qu</span>
+                                <span>Qu</span>
+                                <span>Se</span>
+                                <span class="weekend">Sá</span>
+                                <span class="weekend">Do</span>
+                            </div>
+
+                            <div id="cal-days-grid" class="cal-grid"></div>
+                        </div>
+
+                        <div id="eventos-lista-container" class="eventos-list-card"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="uniformes" class="secao white-bg">
+                <div class="uniformes-container">
+                    <div class="uniformes-header">
+                        <span class="sub-title-red">Nossos Equipamentos</span>
+                        <h2>UNIFORMES</h2>
+                    </div>
+
+                    <div class="filtros-uniformes">
+                        <button class="uni-btn active" onclick="trocarUniforme('jogo1')">Uniforme de Jogo 1</button>
+                        <button class="uni-btn" onclick="trocarUniforme('jogo2')">Uniforme de Jogo 2</button>
+                        <button class="uni-btn" onclick="trocarUniforme('gol')">Uniforme de Goleiro</button>
+                    </div>
+
+                    <div class="uniforme-display-card">
+                        <div class="uniforme-views-grid">
+                            <div class="uni-view">
+                                <img id="uni-frente" src="./Imagens/Uniformes/uniforme frente 1.png" alt="Uniforme Frente">
+                                <span>Frente</span>
+                            </div>
+                            <div class="uni-view">
+                                <img id="uni-lado1" src="./Imagens/Uniformes/unifotme lado 1 1.png" alt="Perfil Esquerdo">
+                                <span>Perfil Esquerdo</span>
+                            </div>
+                            <div class="uni-view">
+                                <img id="uni-costas" src="./Imagens/Uniformes/uniforme costas 1.png" alt="Costas">
+                                <span>Costas (Personalizado)</span>
+                            </div>
+                            <div class="uni-view">
+                                <img id="uni-lado2" src="./Imagens/Uniformes/uniforme lado 2 1.png" alt="Perfil Direito">
+                                <span>Perfil Direito</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="treinos" class="secao white-bg">
+                <div class="treinos-moderno-container">
+                    <div class="treinos-header-mod">
+                        <span class="sub-title-red">Inscrições e Treinamentos</span>
+                        <h2>SOLICITAÇÃO DE TREINO</h2>
+                        <p>Preencha os campos abaixo com seus dados para solicitar o agendamento do seu treino no SESI.</p>
+                    </div>
+
+                    <div class="treinos-grid-moderno">
+                        <div class="treino-form-card">
+                            <h3>Solicitar Novo Treino</h3>
+                            <form id="form-solicitacao-treino" onsubmit="enviarSolicitacaoTreino(event)">
+                                <div class="form-control">
+                                    <label>Nome Completo</label>
+                                    <input type="text" id="input-nome" placeholder="Digite seu nome completo" required>
+                                </div>
+
+                                <div class="form-control">
+                                    <label>E-mail de Contato</label>
+                                    <input type="email" id="input-email" placeholder="seu.email@exemplo.com" required>
+                                </div>
+
+                                <div class="form-control">
+                                    <label>Modalidade Desejada</label>
+                                    <select id="select-modalidade" required>
+                                        <option value="Vôlei Misto">Vôlei Misto</option>
+                                        <option value="Futsal Masculino">Futsal Masculino</option>
+                                        <option value="Tênis de Mesa em Dupla">Tênis de Mesa em Dupla</option>
+                                        <option value="Handebol Feminino">Handebol Feminino</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-control">
+                                    <label>Data de Nascimento</label>
+                                    <input type="date" id="input-data-nasc" required>
+                                </div>
+
+                                <button type="submit" class="btn-enviar-solicitacao">Solicitar Treino</button>
+                            </form>
+                        </div>
+
+                        <div class="treino-lista-card">
+                            <h3>Solicitações Registradas no Banco</h3>
+                            <div id="tabela-solicitacoes-container" class="tabela-solicitacoes-scroll"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="./script.js"></script>
+    <script src="./database.js"></script>
+
+</body>
+</html>
