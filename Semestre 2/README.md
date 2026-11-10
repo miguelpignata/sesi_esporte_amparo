@@ -24,8 +24,8 @@ No 2º Semestre, o foco principal do projeto esteve centrado na **modelagem rela
 
 ## 💻 Arquitetura e Tecnologias
 
-- **Frontend:** Modelagem html com style.css (VsCode)
-- **Modelagem de Dados:** MySQL Workbench 
+- **Frontend:** Modelagem html com style.css (VsCode);
+- **Modelagem de Dados:** MySQL Workbench e XAMPP;
 - **Linguagem / Backend:** JavaScript com VsCode;
 - **Documentação e Versionamento:** Git & GitHub.
 
@@ -47,25 +47,41 @@ No 2º Semestre, o foco principal do projeto esteve centrado na **modelagem rela
 
 ---
 
-## 🚀 Como Executar o Projeto
-
-1. **Abra o Terminal no seu computador e execute o comando:**
-   ```bash
-   git clone https://github.com/miguelpignata/sesi_esporte_amparo.git
-   ```
-
-2. **Abra o arquivo index.html**
-   - Abra a pasta clonada;
-   - Identifique o arquivo index.html (na pasta "Semestre 2");
-   - Abra o arquivo.
-
----
-
-## 🚀 Abrir o site
+## 🚀 Abrir o site (v1 - sem banco de dados)
 
 1. **Clique no site a seguir para abrir o Sesi Esporte Amparo:**
 
 [Sesi Esporte Amparo](https://miguelpignata.github.io/site_sesi_esporte_amparo/)
+
+---
+
+## 🚀 Como Executar o Projeto (v2 - full stack)
+
+1. **Pré-requisitos:**
+   * Tenha o **Node.js** e o **XAMPP** instalados na sua máquina.
+   * Inicie o serviço **MySQL** no painel de controle do XAMPP.
+
+2. **Configurar o Banco de Dados:**
+   * Abra o MySQL Workbench ou outra ferramenta de sua preferência.
+   * Execute o script localizado na pasta do projeto: `script.sql`.
+
+3. **Abra o Terminal no seu computador e execute o comando:**
+   ```bash
+   git clone https://github.com/miguelpignata/sesi_esporte_amparo.git
+   ```
+
+4. **Instalar as Dependências:**
+   * Abra o terminal na pasta raiz do projeto e execute:
+     ```bash
+     npm install
+     ```
+
+5. **Executar a Aplicação:**
+   * Inicie o servidor em modo de desenvolvimento com o comando:
+     ```bash
+     npm run dev
+     ```
+   * O servidor rodará em: `http://localhost:3000`.
 
 ---
 
