@@ -35,15 +35,15 @@ No 2º Semestre, o foco principal do projeto esteve centrado na **modelagem rela
 
 ### Modelo de Entidade e Relacionamento Conceitual (MER)
 
-![Imagem do MER DER Conceitual](./Imagens/Diagramas/conceitual.drawio.png)
+![Imagem do MER DER Conceitual](./Diagramas/conceitual.drawio.png)
 
 ### Modelo de Entidade e Relacionamento Lógico (DER)
 
-![Imagem do MER DER lógico](./Imagens/Diagramas/logico.drawio.png)
+![Imagem do MER DER lógico](./Diagramas/logico.drawio.png)
 
 ### Regras de Negócio e Relacionamentos (Cardinalidades)
 
-![Imagem da regra de negócio e cardinalidade](./Imagens/Diagramas/cardinalidade.drawio.png)
+![Imagem da regra de negócio e cardinalidade](./Diagramas/cardinalidade.drawio.png)
 
 ---
 
