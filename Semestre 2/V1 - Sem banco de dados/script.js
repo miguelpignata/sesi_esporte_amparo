@@ -241,11 +241,10 @@ const eventosCadastrados = {
     "2026-9-3": "JEA Queimada Mirim e Pré Mirim",
     "2026-9-17": "JEA Queimada Infantil e Juvenil",
     "2026-9-24": "JEA Basquete 3x3",
-    "2026-10-9": "Interclasse dia 1.",
-    "2026-10-10": "Interclasse dia 2.",
-    "2026-10-11": "Interclasse dia 3.",
-    "2026-10-12": "Interclasse dia 4.",
-    "2026-10-13": "Interclasse dia 5."
+    "2026-10-27": "Interclasse dia 1 - 7:00 - Vôlei feminino / 10:00 - Futsal masculino.",
+    "2026-10-30": "Interclasse dia 2 - 8:00 - Dama e Xadrez / 10:00 - Vôlei misto.",
+    "2026-11-1": "Interclasse dia 3 - 7:30 - Tênis de mesa / 9:50 - Futmesa.",
+    "2026-11-4": "Interclasse dia 4 - 7:00 - Finais futsal / 9:50 - Finais do vôlei /  11:30 - Premiação."
 };
 
 let dataAtualCalendario = new Date();

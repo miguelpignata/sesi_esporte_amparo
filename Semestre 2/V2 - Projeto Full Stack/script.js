@@ -19,8 +19,6 @@ function mudarSecao(idSecao) {
         voltarParaListaModalidades();
     } else if (idSecao === 'noticias') {
         voltarParaListaNoticias();
-    } else if (idSecao === 'calendario') {
-        renderizarCalendario();
     }
 }
 
@@ -100,7 +98,7 @@ const dadosModalidades = {
             { nome: "Enzo Macedo", num: "18", ano: "2008", img: "Imagens/Atletas/enzo.jpeg" },
             { nome: "Miguel Pignata", num: "27", ano: "2009", img: "Imagens/Atletas/pignata.jpeg" },
             { nome: "Miguel Dantas", num: "82", ano: "2011", img: "Imagens/Atletas/migueldantas.jpeg" }
-        ]
+                    ]
     },
     futsal: {
         titulo: "FUTSAL<br><span>(MASCULINO)</span>",
@@ -175,7 +173,7 @@ function trocarModalidade(chave) {
             </div>
             <div class="atleta-info-box">
                 <div class="atleta-nome">${atleta.nome}</div>
-                <div class="atleta-detalhes">Nº ${atleta.num} | Nasc: ${atleta.ano}</div>
+                <div class="atleta-detalhes">Nº ${atleta.num} • Nasc: ${atleta.ano}</div>
             </div>
         `;
         grid.appendChild(card);
@@ -231,8 +229,8 @@ const nomesMeses = [
 ];
 
 const eventosCadastrados = {
-    "2026-4-9": "JEA Futsal Pré Mirim",
-    "2026-4-16": "JEA Futsal Mirim",
+    "2026-4-9": "JEA Futal Pré Mirim",
+    "2026-5-16": "JEA Futsal Mirim",
     "2026-4-23": "JEA de Xadrez e Damas",
     "2026-4-30": "JEA Futsal Infantil",
     "2026-5-20": "Intersesi em Jundiaí (das 8:30 às 17:00)",
@@ -243,11 +241,10 @@ const eventosCadastrados = {
     "2026-9-3": "JEA Queimada Mirim e Pré Mirim",
     "2026-9-17": "JEA Queimada Infantil e Juvenil",
     "2026-9-24": "JEA Basquete 3x3",
-    "2026-10-9": "Interclasse dia 1.",
-    "2026-10-10": "Interclasse dia 2.",
-    "2026-10-11": "Interclasse dia 3.",
-    "2026-10-12": "Interclasse dia 4.",
-    "2026-10-13": "Interclasse dia 5."
+    "2026-10-27": "Interclasse dia 1 - 7:00 - Vôlei feminino / 10:00 - Futsal masculino.",
+    "2026-10-30": "Interclasse dia 2 - 8:00 - Dama e Xadrez / 10:00 - Vôlei misto.",
+    "2026-11-1": "Interclasse dia 3 - 7:30 - Tênis de mesa / 9:50 - Futmesa.",
+    "2026-11-4": "Interclasse dia 4 - 7:00 - Finais futsal / 9:50 - Finais do vôlei /  11:30 - Premiação."
 };
 
 let dataAtualCalendario = new Date();
@@ -331,52 +328,40 @@ function mudarMes(delta) {
     renderizarCalendario();
 }
 
-async function renderizarTabelaTreinos() {
+function renderizarTabelaTreinos() {
     const container = document.getElementById('tabela-solicitacoes-container');
     if (!container) return;
 
-    container.innerHTML = '<div class="solicitacao-item-card">Carregando dados do banco...</div>';
+    container.innerHTML = '';
 
-    try {
-        const resposta = await fetch('/api/treinos');
-        const bancoDadosTreinos = await resposta.json();
+    if (typeof bancoDadosTreinos !== 'undefined') {
+        bancoDadosTreinos.forEach(item => {
+            let dataFormatada = item.data_nascimento;
+            if (dataFormatada && dataFormatada.includes('-')) {
+                const partes = dataFormatada.split('-');
+                dataFormatada = `${partes[2]}/${partes[1]}/${partes[0]}`;
+            }
 
-        container.innerHTML = '';
-
-        if (bancoDadosTreinos && bancoDadosTreinos.length > 0) {
-            bancoDadosTreinos.forEach(item => {
-                let dataFormatada = item.data_nascimento;
-                if (dataFormatada && dataFormatada.includes('-')) {
-                    const partes = dataFormatada.split('T')[0].split('-');
-                    dataFormatada = `${partes[2]}/${partes[1]}/${partes[0]}`;
-                }
-
-                const card = document.createElement('div');
-                card.className = 'solicitacao-item-card';
-                card.innerHTML = `
-                    <div class="solicitacao-topo">
-                        <span class="solicitacao-titulo">#${item.id} - ${item.nome}</span>
-                        <span class="badge-modalidade">${item.modalidade}</span>
-                    </div>
-                    <div class="solicitacao-detalhes">
-                        <strong>E-mail:</strong> ${item.email}
-                    </div>
-                    <div class="solicitacao-footer-info">
-                        <span>Nascimento: <strong>${dataFormatada}</strong></span>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-        } else {
-            container.innerHTML = '<div class="solicitacao-item-card">Nenhuma solicitação encontrada.</div>';
-        }
-    } catch (erro) {
-        console.error('Erro ao carregar solicitações:', erro);
-        container.innerHTML = '<div class="solicitacao-item-card">Erro ao conectar com o banco de dados.</div>';
+            const card = document.createElement('div');
+            card.className = 'solicitacao-item-card';
+            card.innerHTML = `
+                <div class="solicitacao-topo">
+                    <span class="solicitacao-titulo">#${item.id} - ${item.nome}</span>
+                    <span class="badge-modalidade">${item.modalidade}</span>
+                </div>
+                <div class="solicitacao-detalhes">
+                    <strong>E-mail:</strong> ${item.email}
+                </div>
+                <div class="solicitacao-footer-info">
+                    <span>Nascimento: <strong>${dataFormatada}</strong></span>
+                </div>
+            `;
+            container.appendChild(card);
+        });
     }
 }
 
-async function enviarSolicitacaoTreino(event) {
+function enviarSolicitacaoTreino(event) {
     event.preventDefault();
 
     const nome = document.getElementById('input-nome').value.trim();
@@ -384,33 +369,26 @@ async function enviarSolicitacaoTreino(event) {
     const modalidade = document.getElementById('select-modalidade').value;
     const dataNascimento = document.getElementById('input-data-nasc').value;
 
+    const novoId = typeof bancoDadosTreinos !== 'undefined' && bancoDadosTreinos.length > 0 
+        ? bancoDadosTreinos[bancoDadosTreinos.length - 1].id + 1 
+        : 1;
+
     const novoRegistro = {
+        id: novoId,
         nome: nome,
         email: email,
         modalidade: modalidade,
         data_nascimento: dataNascimento
     };
 
-    try {
-        const resposta = await fetch('/api/treinos', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(novoRegistro)
-        });
-
-        if (resposta.ok) {
-            renderizarTabelaTreinos();
-            document.getElementById('form-solicitacao-treino').reset();
-            alert(`Solicitação de treino em ${modalidade} realizada com sucesso para ${nome}!`);
-        } else {
-            alert('Erro ao salvar a solicitação no banco.');
-        }
-    } catch (erro) {
-        console.error('Erro na requisição:', erro);
-        alert('Erro de conexão com o servidor.');
+    if (typeof bancoDadosTreinos !== 'undefined') {
+        bancoDadosTreinos.push(novoRegistro);
     }
+    
+    renderizarTabelaTreinos();
+
+    document.getElementById('form-solicitacao-treino').reset();
+    alert(`Solicitação de treino em ${modalidade} realizada com sucesso para ${nome}!`);
 }
 
 window.onload = function() {
