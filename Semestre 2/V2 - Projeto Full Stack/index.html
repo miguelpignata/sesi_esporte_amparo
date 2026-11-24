@@ -10,10 +10,10 @@
 
 <body>
     <div class="site-container">
-        
+
         <header class="site-header">
 
-            <a href="#inicio" class="logo-container" onclick="mudarSecao('inicio')">
+            <a href="#inicio" class="logo-container" onclick="mudarSecao('inicio'); return false;">
                 <div class="logo-icon-img">
                     <img src="./Imagens/sesiesporteamparo.png" alt="Logo SESI Esporte Amparo">
                 </div>
@@ -22,12 +22,12 @@
 
             <nav class="site-nav">
                 <ul>
-                    <li><a href="#inicio" class="nav-btn active" onclick="mudarSecao('inicio')">Início</a></li>
-                    <li><a href="#noticias" class="nav-btn" onclick="mudarSecao('noticias')">Notícias</a></li>
-                    <li><a href="#modalidades" class="nav-btn" onclick="mudarSecao('modalidades')">Modalidades</a></li>
-                    <li><a href="#calendario" class="nav-btn" onclick="mudarSecao('calendario')">Calendário</a></li>
-                    <li><a href="#uniformes" class="nav-btn" onclick="mudarSecao('uniformes')">Uniformes</a></li>
-                    <li><a href="#treinos" class="nav-btn" onclick="mudarSecao('treinos')">Treinos</a></li>
+                    <li><a href="#inicio" class="nav-btn active" onclick="mudarSecao('inicio'); return false;">Início</a></li>
+                    <li><a href="#noticias" class="nav-btn" onclick="mudarSecao('noticias'); return false;">Notícias</a></li>
+                    <li><a href="#modalidades" class="nav-btn" onclick="mudarSecao('modalidades'); return false;">Modalidades</a></li>
+                    <li><a href="#calendario" class="nav-btn" onclick="mudarSecao('calendario'); return false;">Calendário</a></li>
+                    <li><a href="#uniformes" class="nav-btn" onclick="mudarSecao('uniformes'); return false;">Uniformes</a></li>
+                    <li><a href="#treinos" class="nav-btn" onclick="mudarSecao('treinos'); return false;">Treinos</a></li>
                 </ul>
             </nav>
         </header>
@@ -35,27 +35,45 @@
         <main class="main-content">
 
             <section id="inicio" class="secao ativa">
-                <div class="hero-card">
-                    <h1>SESI<br><span class="highlight">ESPORTES</span><br>AMPARO</h1>
-                    <p>Formando campeões dentro e fora das quadras.<br>Conheça nossas modalidades, acompanhe as novidades e faça parte do time.</p>
-                    <div class="hero-stats">
-                        <div class="stat-box">
-                            <strong>+ de 3</strong>
-                            <span>Modalidades Esportivas</span>
+                <div class="inicio-hero-banner">
+                    <div class="hero-card">
+                        <h1>SESI<br><span class="highlight">ESPORTES</span><br>AMPARO</h1>
+                        <p>Formando campeões dentro e fora das quadras.<br>Conheça nossas modalidades, acompanhe as novidades e faça parte do time.</p>
+                        <div class="hero-stats">
+                            <div class="stat-box">
+                                <strong>+ de 3</strong>
+                                <span>Modalidades Esportivas</span>
+                            </div>
+                            <div class="stat-box">
+                                <strong>+ de 30</strong>
+                                <span>Atletas</span>
+                            </div>
+                            <div class="stat-box action" onclick="mudarSecao('treinos')">
+                                <strong>Agende</strong>
+                                <span>seu treinamento</span>
+                            </div>
                         </div>
-                        <div class="stat-box">
-                            <strong>+ de 30</strong>
-                            <span>Atletas</span>
-                        </div>
-                        <div class="stat-box action" onclick="mudarSecao('treinos')">
-                            <strong>Agende</strong>
-                            <span>seu treinamento</span>
-                        </div>
+                    </div>
+                </div>
+
+                <div class="transicao-apos-banner"></div>
+
+                <div id="sessao-fotos-atletas" class="sessao-fotos-container">
+                    <div class="sessao-fotos-header">
+                        <span class="sub-title-red">Galeria</span>
+                        <h2>SESSÃO DE FOTOS</h2>
+                    </div>
+                    <div id="galeria-fotos-atletas" class="galeria-vsco"></div>
+                    <div class="ver-mais-wrapper">
+                        <button id="btn-ver-mais-fotos" type="button" class="btn-ver-mais-fotos" onclick="verMaisFotosAtletas()">
+                            Exibir mais fotos
+                        </button>
                     </div>
                 </div>
             </section>
 
             <section id="noticias" class="secao white-bg">
+
                 <div id="sub-noticias-lista" class="sub-secao ativa-sub noticias-centralizadas">
                     <div class="noticias-header-top">
                         <span class="sub-title-red">Novidades</span>
@@ -143,7 +161,7 @@
                             <article class="article-card">
                                 <div class="article-header">
                                     <span class="category-badge">VÔLEI</span>
-                                    <span class="article-date">📅 22/06/2026</span>
+                                    <span class="article-date">📅 22 de junho de 2026</span>
                                     <h1>Vôlei Feminino do Sesi dá um show na quadra!</h1>
                                     <p class="article-subtitle">Não é uma, não é duas, são três... Três títulos da Copa InterSesi para elas!</p>
                                 </div>
@@ -191,7 +209,7 @@
                                 </div>
                                 <div class="article-body">
                                     <p>Após uma difícil classificação para o mata a mata, a equipe feminina de handebol toda um gol no último minuto de jogo, levando a disputa pela vaga na final para os pênaltis.</p>
-                                    <br
+                                    <br>
                                     <p>Após uma decisão questionável da arbitragem em marcar falta em um lance considerado por muitos "normal", em uma jogada de mestre da equipe Santana da Parnaíba, o Sesi Amparo toma gol no último minuto, levando a semifinal para os pênaltis. </p>
                                     <br>
                                     <p>E infelizmente não foi dessa vez! Nas cobranças alternadas Santana da Parnaíba converte, mas Amparo não, acabando com o sonho de garantir mais uma modalidade na final.</p>
@@ -218,7 +236,7 @@
             </section>
 
             <section id="modalidades" class="secao white-bg">
-     
+
                 <div id="sub-modalidades-lista" class="sub-secao ativa-sub modalidades-centralizadas">
                     <div class="modalidades-header-top">
                         <span class="sub-title-red">Nossas Equipes</span>
@@ -428,6 +446,32 @@
             </section>
 
         </main>
+
+        <footer class="site-footer">
+            <div class="footer-main">
+                <div class="footer-col-info">
+                    <div>ce356@sesisp.org.br</div>
+                    <div>Rod. João Beira, KM 47 - Amparo - SP</div>
+                    <div>(019) 3807-2048</div>
+                </div>
+
+                <div class="footer-col-center">
+                    <strong>Sesi Amparo</strong>
+                    <span>(Site em desenvolvimento)</span>
+                </div>
+
+                <div class="footer-col-github">
+                    <a href="https://github.com/Cardiall7" target="_blank" rel="noopener noreferrer">Davi Cardeal</a>
+                    <a href="https://github.com/enzo-macedo" target="_blank" rel="noopener noreferrer">Enzo Macedo</a>
+                    <a href="https://github.com/miguelpignata" target="_blank" rel="noopener noreferrer">Miguel Pignata</a>
+                    <a href="https://github.com/thiagodelimao24-bot" target="_blank" rel="noopener noreferrer">Thiago Amaral</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2026 Todos os Direitos reservados
+            </div>
+        </footer>
+
     </div>
 
     <script src="./script.js"></script>

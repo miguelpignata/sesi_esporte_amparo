@@ -1,3 +1,14 @@
+function rolarParaTopo() {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+}
+
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+rolarParaTopo();
+
 function mudarSecao(idSecao) {
     const secoes = document.querySelectorAll('.secao');
     secoes.forEach(secao => secao.classList.remove('ativa'));
@@ -19,7 +30,11 @@ function mudarSecao(idSecao) {
         voltarParaListaModalidades();
     } else if (idSecao === 'noticias') {
         voltarParaListaNoticias();
+    } else if (idSecao === 'inicio') {
+        resetarGaleriaAtletas();
     }
+
+    rolarParaTopo();
 }
 
 function filtrarNoticia(categoria) {
@@ -51,6 +66,7 @@ function abrirNoticia(idNoticia) {
     if (noticiaAlvo) {
         noticiaAlvo.classList.add('ativa-sub');
     }
+    rolarParaTopo();
 }
 
 function voltarParaListaNoticias() {
@@ -58,6 +74,7 @@ function voltarParaListaNoticias() {
     subSecoes.forEach(sub => sub.classList.remove('ativa-sub'));
 
     document.getElementById('sub-noticias-lista').classList.add('ativa-sub');
+    rolarParaTopo();
 }
 
 function abrirElencoModalidade(chave) {
@@ -70,6 +87,7 @@ function abrirElencoModalidade(chave) {
     }
 
     trocarModalidade(chave);
+    rolarParaTopo();
 }
 
 function voltarParaListaModalidades() {
@@ -80,6 +98,7 @@ function voltarParaListaModalidades() {
     if (listaSub) {
         listaSub.classList.add('ativa-sub');
     }
+    rolarParaTopo();
 }
 
 const dadosModalidades = {
@@ -98,7 +117,7 @@ const dadosModalidades = {
             { nome: "Enzo Macedo", num: "18", ano: "2008", img: "Imagens/Atletas/enzo.jpeg" },
             { nome: "Miguel Pignata", num: "27", ano: "2009", img: "Imagens/Atletas/pignata.jpeg" },
             { nome: "Miguel Dantas", num: "82", ano: "2011", img: "Imagens/Atletas/migueldantas.jpeg" }
-                    ]
+        ]
     },
     futsal: {
         titulo: "FUTSAL<br><span>(MASCULINO)</span>",
@@ -142,6 +161,87 @@ const dadosModalidades = {
         ]
     }
 };
+
+const totalFotosPasta = 32;
+const fotosGaleriaVsco = Array.from({ length: totalFotosPasta }, (_, i) => {
+    const numero = String(totalFotosPasta - i).padStart(2, '0');
+    return {
+        nome: `Foto ${numero}`,
+        img: `./Imagens/Fotos/foto${numero}.jpg`
+    };
+});
+
+let paginasAlturaVsco = 1;
+
+function atualizarBotaoExibirMaisFotos(grid, btnVerMais) {
+    if (!btnVerMais || !grid) return;
+
+    const haFotosEscondidas = grid.scrollHeight > grid.clientHeight + 2;
+    btnVerMais.style.display = haFotosEscondidas ? 'inline-flex' : 'none';
+}
+
+function renderizarGaleriaAtletas() {
+    const grid = document.getElementById('galeria-fotos-atletas');
+    const btnVerMais = document.getElementById('btn-ver-mais-fotos');
+    if (!grid) return;
+
+    grid.innerHTML = '';
+    grid.style.maxHeight = `${paginasAlturaVsco * 100}vh`;
+
+    const numColunas = 4;
+    const colunas = Array.from({ length: numColunas }, () => {
+        const col = document.createElement('div');
+        col.className = 'galeria-coluna';
+        return col;
+    });
+
+    fotosGaleriaVsco.forEach((foto, index) => {
+        const card = document.createElement('div');
+        card.className = 'foto-vsco';
+
+        const img = document.createElement('img');
+        img.src = foto.img;
+        img.alt = foto.nome;
+        img.onload = () => atualizarBotaoExibirMaisFotos(grid, btnVerMais);
+        img.onerror = function() {
+            this.onerror = null;
+            this.src = './Imagens/quadra_sesi.jpeg';
+            atualizarBotaoExibirMaisFotos(grid, btnVerMais);
+        };
+
+        card.appendChild(img);
+        colunas[index % numColunas].appendChild(card);
+    });
+
+    colunas.forEach(col => grid.appendChild(col));
+    atualizarBotaoExibirMaisFotos(grid, btnVerMais);
+}
+
+function verMaisFotosAtletas() {
+    const grid = document.getElementById('galeria-fotos-atletas');
+    const btnVerMais = document.getElementById('btn-ver-mais-fotos');
+    if (!grid) return;
+
+    paginasAlturaVsco += 1;
+    grid.style.maxHeight = `${paginasAlturaVsco * 100}vh`;
+    atualizarBotaoExibirMaisFotos(grid, btnVerMais);
+}
+
+function resetarGaleriaAtletas() {
+    paginasAlturaVsco = 1;
+    const grid = document.getElementById('galeria-fotos-atletas');
+    const btnVerMais = document.getElementById('btn-ver-mais-fotos');
+    if (grid) {
+        grid.style.maxHeight = '100vh';
+        atualizarBotaoExibirMaisFotos(grid, btnVerMais);
+    }
+}
+
+window.addEventListener('resize', function() {
+    const grid = document.getElementById('galeria-fotos-atletas');
+    const btnVerMais = document.getElementById('btn-ver-mais-fotos');
+    atualizarBotaoExibirMaisFotos(grid, btnVerMais);
+});
 
 function trocarModalidade(chave) {
     const botoesMod = document.querySelectorAll('.mod-btn');
@@ -391,7 +491,13 @@ function enviarSolicitacaoTreino(event) {
     alert(`Solicitação de treino em ${modalidade} realizada com sucesso para ${nome}!`);
 }
 
-window.onload = function() {
+window.addEventListener('DOMContentLoaded', function() {
+    rolarParaTopo();
+    renderizarGaleriaAtletas();
     renderizarCalendario();
     renderizarTabelaTreinos();
+});
+
+window.onload = function() {
+    rolarParaTopo();
 };
